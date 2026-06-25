@@ -1,0 +1,6 @@
+sonic_dataset/
+sonic_temp/
+__pycache__/
+*.pyc
+.DS_Store
+**/.DS_Store
