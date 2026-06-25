@@ -163,8 +163,22 @@ class head{ //будет принимать относительный путь 
             // }
         }
 
-        void count(){
+        std::vector<double> count(){
             if (samples.size()<2){std::cout<<"wav file problem";return;}
+            std::vector<double> v;
+            v.resize(FEATURE_COUNT);
+            v[RMS]=RMS_();
+            v[PEAK_AMPLITUDE]=PEAK_AMPLITUDE_();
+            v[ZERO_CROSSING_RATE]=ZERO_CROSSING_RATE_();
+            v[SPECTRAL_CENTROID]=SPECTRAL_CENTROID_();
+            v[SPECTRAL_ROLLOFF]=SPECTRAL_ROLLOFF_();
+            v[SPECTRAL_BANDWIDTH]=SPECTRAL_BANDWIDTH_();
+            v[SPECTRAL_FLATNESS]=SPECTRAL_FLATNESS_();
+            v[LOW_ENERGY_RATIO]=LOW_ENERGY_RATIO_();
+            v[MID_ENERGY_RATIO]=MID_ENERGY_RATIO_();
+            v[HIGH_ENERGY_RATIO]=HIGH_ENERGY_RATIO_();
+
+            return v;
 
         }
         double RMS_(){double sum =0; for(float sample:samples){sum+=sample*sample;}return sqrt((sum/samples.size()));}
@@ -180,11 +194,10 @@ class head{ //будет принимать относительный путь 
         double SPECTRAL_CENTROID_(){}
         double SPECTRAL_ROLLOFF_(){}
         double SPECTRAL_BANDWIDTH_(){}
-        double SPECTRAL_FLATNESS(){}
-        double OW_ENERGY_RATIO(){}
-        double MID_ENERGY_RATIO(){}
-        double HIGH_ENERGY_RATIO(){}
-        double FEATURE_COUNT(){}
+        double SPECTRAL_FLATNESS_(){}
+        double LOW_ENERGY_RATIO_(){}
+        double MID_ENERGY_RATIO_(){}
+        double HIGH_ENERGY_RATIO_(){}
 
 
 };
