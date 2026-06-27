@@ -1,4 +1,4 @@
-// g++ -std=c++17 AudioCounter.cpp kiss-fft-master/kiss_fft.cpp -I./kiss-fft-master -o AudioCounter.exe
+// g++ -std=c++17 -O3 -march=native AudioCounter.cpp kiss-fft-master/kiss_fft.cpp -I. -Ikiss-fft-master -o AudioCounter.exe
 #include <iostream>
 #include <string>
 #include <filesystem>
